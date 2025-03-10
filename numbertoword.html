@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function numberToWords(num) {
+            const a = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+            const b = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+            const c = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+            const d = ['Hundred', 'Thousand'];
+
+            let words = '';
+
+            if (num === 0) {
+                return a[0];
+            }
+
+            if (num >= 1000) {
+                words += a[Math.floor(num / 1000)] + ' ' + d[1] + ' ';
+                num %= 1000;
+            }
+
+            if (num >= 100) {
+                words += a[Math.floor(num / 100)] + ' ' + d[0] + ' ';
+                num %= 100;
+            }
+
+            if (num >= 20) {
+                words += c[Math.floor(num / 10) - 2] + ' ';
+                num %= 10;
+            }
+
+            if (num >= 10) {
+                words += b[num - 10] + ' ';
+                num = 0;
+            }
+
+            if (num > 0) {
+                words += a[num];
+            }
+
+            return words.trim();
+        }
+
+        function convertNumber() {
+            const num = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('result').innerText = numberToWords(num);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Convert Number to Words</h1>
+  <p style="text-align: center;">  <input  type="number" id="numberInput" placeholder="Enter a number"></p>
+  <p style="text-align: center;">  <button class="button"  onclick="convertNumber()">Convert</button></p>
+    <p id="result"></p>
+</body>
+</html>
