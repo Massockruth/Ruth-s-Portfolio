@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="assets/css/meyawo.css" />
+<link rel="stylesheet" href="project1.css" />
+</head>
+<body>
+  <main>
+    <h1>Weather App Project</h1>
+    <form id="search-form">
+      <input id="city" placeholder="Enter a city…" required />
+      <button class="btn btn-primary" type="submit">Get Weather</button>
+    </form>
+   <button class="btn btn-primary" id="unit-toggle" type="button">Switch to °F</button>
+
+    <section id="result" hidden>
+      <h2 id="place"></h2>
+      <p id="summary"></p>
+
+
+      <li class="item" id="hourly"></li>
+                        
+
+
+    </section>
+
+    <p id="error" class="error" hidden></p>
+  </main>
+  <script src="project1.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(to bottom, #f0faff, #ffffff);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  height: 100vh; /* Full height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the main content take the full width and height */
+main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 600px;
+}
+
+input[type="text"],
+#city {
+  padding: 12px;
+  font-size: 1rem;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #0c5df4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0945c3;
+}
+
+.error {
+  color: #e53935;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#result {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#place {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#summary {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Horizontal hourly section */
+#hourly {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make hourly boxes bigger */
+#hourly li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: #eef6ff;
+  border-radius: 12px;
+  padding: 20px 15px;
+  min-width: 120px;  /* Bigger width */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+#hourly li:hover {
+  transform: scale(1.05);
+}
+
+#hourly li strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+#hourly li span {
+  font-size: 3rem; /* Bigger emoji */
+  display: block;
+  margin: 6px 0;
+}
